@@ -1,3 +1,4 @@
+import debug from '../css/debug.css';
 import React,{Component} from 'react';
 import {ControlButton} from './ControlButton';
 
@@ -29,7 +30,9 @@ export class ControlPanel extends Component{
     render(){
         console.log(this);
         return(
-            <div className="container">{this.state.buttons}</div>
+            <div className="ui grid centered two column controlPanel debug">
+                {this.state.buttons}
+            </div>
         );
     };
 };

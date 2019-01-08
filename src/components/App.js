@@ -11,7 +11,7 @@ class App extends Component{
         this.TodoList = React.createRef();
         this.eventHandler = this.eventHandler.bind(this);
         this.eventDispatch = this.eventDispatch.bind(this);
-    }
+    };
     eventHandler(action){
         this.eventDispatch(action);
     };
@@ -23,12 +23,12 @@ class App extends Component{
     render(){
         console.log(buttons);
         return(
-            <div>
+            <div className="ui container">
                 <ControlPanel buttons={buttons} eventEmitter={this.eventHandler}/>
                 <TodoList ref={this.TodoList} eventListener={this.eventDispatch}/>
             </div>
         );
-    }
+    };
 };
 
 export default App;

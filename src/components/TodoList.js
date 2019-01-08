@@ -1,22 +1,26 @@
 import React, {Component} from 'react';
+import {TodoItem} from './TodoItem';
 
 export class TodoList extends Component{
-    state = {todos:[]};
-    // constructor(props){
-    //     super(props);
-    //     // this.props.eventListener.call(this.eventListener);
-    // }
+    state = {todos:[],todoEls:[]};
+
     eventListener(action){
-        // console.log(`Got action ${action}`);
         if(action === 'addTodo'){
-            console.log('Adding new todo!');
+            this.addTodoEl();
         }else if(action === 'clearAll'){
-            console.log('Clearing all todos');
+            this.clearAllTodos();
         }else{
             console.log('Action was not defined');
         }
     };
+    addTodoEl(){
+        let todo = <TodoItem key={this.state.todoEls.length} taskName={'New Todo'} completed={false}/>
+        this.setState({todoEls:[...this.state.todoEls,todo]});
+    };
+    clearAllTodos(){
+        this.setState({todoEls:[]});
+    };
     render(){
-        return(<div>SUP Yo!</div>);
+        return(<div className='debug'>{this.state.todoEls}</div>);
     };
 };

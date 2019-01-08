@@ -13,7 +13,7 @@ export class ControlButton extends Component{
 
     render(){
         return(
-            <button onClick={()=>this.props.onClick(this.state.action)} className={`ui ${this.state.color} basic button`}>{this.state.displayText}</button>
+            <button onClick={()=>this.props.onClick(this.state.action)} className={`ui ${this.state.color} basic button mini controlButton`}>{this.state.displayText}</button>
         );
     };
 };
